@@ -1,8 +1,8 @@
 require 'spec_helper'
 
 module Pronto
-  describe ESLint do
-    let(:eslint) { ESLint.new(patches) }
+  describe ESLintNpm do
+    let(:eslint) { ESLintNpm.new(patches) }
 
     describe '#run' do
       subject { eslint.run }

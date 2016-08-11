@@ -1,6 +1,6 @@
 require 'rspec'
 require 'rspec/its'
-require 'pronto/eslint'
+require 'pronto/eslint-npm'
 
 %w(test eslintignore).each do |repo_name|
   RSpec.shared_context "#{repo_name} repo" do

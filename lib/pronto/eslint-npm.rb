@@ -1,7 +1,7 @@
 require 'pronto'
 
 module Pronto
-  class ESLint < Runner
+  class ESLintNpm < Runner
     def run
       return [] unless @patches
 

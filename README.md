@@ -1,15 +1,19 @@
-# Pronto runner for ESLint
+# Pronto runner for ESLint (using eslint from npm)
 
-[![Code Climate](https://codeclimate.com/github/mmozuras/pronto-eslint.png)](https://codeclimate.com/github/mmozuras/pronto-eslint)
-[![Build Status](https://travis-ci.org/mmozuras/pronto-eslint.png)](https://travis-ci.org/mmozuras/pronto-eslint)
-[![Gem Version](https://badge.fury.io/rb/pronto-eslint.png)](http://badge.fury.io/rb/pronto-eslint)
-[![Dependency Status](https://gemnasium.com/mmozuras/pronto-eslint.png)](https://gemnasium.com/mmozuras/pronto-eslint)
+[![Code Climate](https://codeclimate.com/github/doits/pronto-eslint-npm.png)](https://codeclimate.com/github/doits/pronto-eslint-npm)
+[![Build Status](https://travis-ci.org/doits/pronto-eslint.png)](https://travis-ci.org/doits/pronto-eslint-npm)
+[![Gem Version](https://badge.fury.io/rb/pronto-eslint-npm.png)](http://badge.fury.io/rb/pronto-eslint-npm)
+[![Dependency Status](https://gemnasium.com/doits/pronto-eslint-npm.png)](https://gemnasium.com/doits/pronto-eslint-npm)
 
 Pronto runner for [ESlint](http://eslint.org), pluggable linting utility for JavaScript and JSX. [What is Pronto?](https://github.com/mmozuras/pronto)
 
+Uses system wide installed eslint in contrast to [pronto-eslint][pronto-eslint].
+
+[eslint-pronto]: https://github.com/mmozuras/pronto-eslint
+
 ## Prerequisites
 
-You'll need to install [eslint by yourself][eslint-install].
+You'll need to install [eslint by yourself with npm][eslint-install].
 
 [eslint-install]: http://eslint.org/docs/user-guide/getting-started
 
