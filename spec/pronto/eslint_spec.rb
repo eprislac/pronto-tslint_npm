@@ -32,7 +32,7 @@ module Pronto
         let(:patches) { repo.diff('master') }
 
         its(:count) { should == 3 }
-        its(:'first.msg') { should == "'HelloWorld' is defined but never used" }
+        its(:'first.msg') { should == "'HelloWorld' is defined but never used." }
       end
     end
   end
