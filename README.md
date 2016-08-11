@@ -1,9 +1,9 @@
 # Pronto runner for ESLint (using eslint from npm)
 
-[![Code Climate](https://codeclimate.com/github/doits/pronto-eslint-npm.svg)](https://codeclimate.com/github/doits/pronto-eslint-npm)
-[![Build Status](https://travis-ci.org/doits/pronto-eslint-npm.svg?branch=master)](https://travis-ci.org/doits/pronto-eslint-npm)
-[![Gem Version](https://badge.fury.io/rb/pronto-eslint-npm.svg)](http://badge.fury.io/rb/pronto-eslint-npm)
-[![Dependency Status](https://gemnasium.com/doits/pronto-eslint-npm.svg)](https://gemnasium.com/doits/pronto-eslint-npm)
+[![Code Climate](https://codeclimate.com/github/doits/pronto-eslint_npm.svg)](https://codeclimate.com/github/doits/pronto-eslint_npm)
+[![Build Status](https://travis-ci.org/doits/pronto-eslint_npm.svg?branch=master)](https://travis-ci.org/doits/pronto-eslint_npm)
+[![Gem Version](https://badge.fury.io/rb/pronto-eslint_npm.svg)](http://badge.fury.io/rb/pronto-eslint_npm)
+[![Dependency Status](https://gemnasium.com/doits/pronto-eslint_npm.svg)](https://gemnasium.com/doits/pronto-eslint_npm)
 
 Pronto runner for [ESlint](http://eslint.org), pluggable linting utility for JavaScript and JSX. [What is Pronto?](https://github.com/mmozuras/pronto)
 

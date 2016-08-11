@@ -1,16 +1,16 @@
 # -*- encoding: utf-8 -*-
 
 $LOAD_PATH.push File.expand_path('../lib', __FILE__)
-require 'pronto/eslint-npm/version'
+require 'pronto/eslint_npm/version'
 require 'rake'
 
 Gem::Specification.new do |s|
-  s.name = 'pronto-eslint-npm'
+  s.name = 'pronto-eslint_npm'
   s.version = Pronto::ESLintNpmVersion::VERSION
   s.platform = Gem::Platform::RUBY
   s.authors = ['Markus Doits', 'Mindaugas Mozūras']
   s.email = 'markus.doits@gmail.com'
-  s.homepage = 'http://github.org/doits/pronto-eslint-npm'
+  s.homepage = 'http://github.org/doits/pronto-eslint_npm'
   s.summary = <<-EOF
     Pronto runner for ESLint, pluggable linting utility for JavaScript and JSX
   EOF
