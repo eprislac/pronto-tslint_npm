@@ -9,7 +9,7 @@ Pronto runner for [ESlint](http://eslint.org), pluggable linting utility for Jav
 
 Uses system wide installed eslint in contrast to [pronto-eslint][pronto-eslint].
 
-[eslint-pronto]: https://github.com/mmozuras/pronto-eslint
+[pronto-eslint]: https://github.com/mmozuras/pronto-eslint
 
 ## Prerequisites
 
