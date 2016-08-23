@@ -1,4 +1,5 @@
 require 'pronto'
+require 'shellwords'
 
 module Pronto
   class ESLintNpm < Runner
