@@ -1,6 +1,5 @@
 require 'fileutils'
 require 'rspec'
-require 'rspec/its'
 require 'pronto/eslint_npm'
 
 %w(test eslintignore).each do |repo_name|
@@ -12,4 +11,13 @@ require 'pronto/eslint_npm'
     let(:repo) { Pronto::Git::Repository.new("spec/fixtures/#{repo_name}.git") }
     after { FileUtils.mv(dot_git, git) }
   end
+end
+
+RSpec.shared_context 'with config', config: true do
+  requested_config = metadata[:config].to_yaml
+
+  let(:config_path) { File.join(repo.path.to_s, Pronto::ESLintNpm::CONFIG_FILE) }
+
+  before(:each) { File.write(config_path, requested_config) }
+  after(:each) { FileUtils.rm(config_path) }
 end

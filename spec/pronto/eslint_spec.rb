@@ -3,6 +3,7 @@ require 'spec_helper'
 module Pronto
   describe ESLintNpm do
     let(:eslint) { ESLintNpm.new(patches) }
+    let(:patches) { [] }
 
     describe '#run' do
       subject(:run) { eslint.run }
@@ -35,6 +36,33 @@ module Pronto
         it 'has correct first message' do
           expect(run.first.msg).to eql("'foo' is not defined.")
         end
+
+        context(
+          'with files to lint config that never matches',
+          config: { files_to_lint: 'will never match' }
+        ) do
+          it 'returns zero errors' do
+            expect(run.count).to eql(0)
+          end
+        end
+
+        context(
+          'with files to lint config that matches only .js',
+          config: { files_to_lint: /\.js/ }
+        ) do
+          it 'returns correct amount of errors' do
+            expect(run.count).to eql(2)
+          end
+        end
+
+        context(
+          'with different eslint executable',
+          config: { eslint_executable: './custom_eslint.sh' }
+        ) do
+          it 'calls the custom eslint eslint_executable' do
+            expect { run }.to raise_error(JSON::ParserError, /custom eslint called/)
+          end
+        end
       end
 
       context 'repo with ignored and not ignored file, each with three warnings' do
@@ -52,8 +80,8 @@ module Pronto
       end
     end
 
-    describe '.files_to_lint' do
-      subject(:files_to_lint) { ESLintNpm.files_to_lint }
+    describe '#files_to_lint' do
+      subject(:files_to_lint) { eslint.files_to_lint }
 
       it 'matches .js by default' do
         expect(files_to_lint).to match('my_js.js')
@@ -64,8 +92,8 @@ module Pronto
       end
     end
 
-    describe '.eslint_executable' do
-      subject(:eslint_executable) { ESLintNpm.eslint_executable }
+    describe '#eslint_executable' do
+      subject(:eslint_executable) { eslint.eslint_executable }
 
       it 'is `eslint` by default' do
         expect(eslint_executable).to eql('eslint')

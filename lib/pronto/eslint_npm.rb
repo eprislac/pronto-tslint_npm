@@ -3,20 +3,38 @@ require 'shellwords'
 
 module Pronto
   class ESLintNpm < Runner
-    class << self
-      attr_writer :eslint_executable, :files_to_lint
+    CONFIG_FILE = '.pronto_eslint_npm.yml'.freeze
+    CONFIG_KEYS = %i(eslint_executable files_to_lint).freeze
 
-      def eslint_executable
-        @eslint_executable || 'eslint'.freeze
-      end
+    attr_writer :eslint_executable
 
-      def files_to_lint
-        @files_to_lint || /(\.js|\.es6)$/
+    def eslint_executable
+      @eslint_executable || 'eslint'.freeze
+    end
+
+    def files_to_lint
+      @files_to_lint || /(\.js|\.es6)$/
+    end
+
+    def files_to_lint=(regexp)
+      @files_to_lint = regexp.is_a?(Regexp) && regexp || Regexp.new(regexp)
+    end
+
+    def read_config
+      config_file = File.join(repo_path, CONFIG_FILE)
+      return unless File.exist?(config_file)
+      config = YAML.load_file(config_file)
+
+      CONFIG_KEYS.each do |config_key|
+        next unless config[config_key]
+        send("#{config_key}=", config[config_key])
       end
     end
 
     def run
-      return [] unless @patches
+      return [] if !@patches || @patches.count.zero?
+
+      read_config
 
       @patches
         .select { |patch| patch.additions > 0 }
@@ -27,9 +45,11 @@ module Pronto
 
     private
 
-    def inspect(patch)
+    def repo_path
       @_repo_path ||= @patches.first.repo.path
+    end
 
+    def inspect(patch)
       offences = run_eslint(patch)
       clean_up_eslint_output(offences)
         .map do |offence|
@@ -48,14 +68,14 @@ module Pronto
     end
 
     def js_file?(path)
-      self.class.files_to_lint =~ path.to_s
+      files_to_lint =~ path.to_s
     end
 
     def run_eslint(patch)
-      Dir.chdir(@_repo_path) do
+      Dir.chdir(repo_path) do
         escaped_file_path = Shellwords.escape(patch.new_file_full_path.to_s)
         JSON.parse(
-          `#{self.class.eslint_executable} #{escaped_file_path} -f json`
+          `#{eslint_executable} #{escaped_file_path} -f json`
         )
       end
     end
