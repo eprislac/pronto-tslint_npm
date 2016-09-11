@@ -3,14 +3,29 @@ require 'shellwords'
 
 module Pronto
   class ESLintNpm < Runner
+    class << self
+      attr_writer :eslint_executable, :files_to_lint
+
+      def eslint_executable
+        @eslint_executable || 'eslint'.freeze
+      end
+
+      def files_to_lint
+        @files_to_lint || /(\.js|\.es6)$/
+      end
+    end
+
     def run
       return [] unless @patches
 
-      @patches.select { |patch| patch.additions > 0 }
+      @patches
+        .select { |patch| patch.additions > 0 }
         .select { |patch| js_file?(patch.new_file_full_path) }
         .map { |patch| inspect(patch) }
         .flatten.compact
     end
+
+    private
 
     def inspect(patch)
       @_repo_path ||= @patches.first.repo.path
@@ -25,8 +40,6 @@ module Pronto
         end
     end
 
-    private
-
     def new_message(offence, line)
       path = line.patch.delta.new_file[:path]
       level = :warning
@@ -35,18 +48,18 @@ module Pronto
     end
 
     def js_file?(path)
-      %w(.js .es6 .js.es6).include?(File.extname(path))
+      self.class.files_to_lint =~ path.to_s
     end
 
     def run_eslint(patch)
       Dir.chdir(@_repo_path) do
+        escaped_file_path = Shellwords.escape(patch.new_file_full_path.to_s)
         JSON.parse(
-          `eslint #{Shellwords.escape(patch.new_file_full_path.to_s)} -f json`
+          `#{self.class.eslint_executable} #{escaped_file_path} -f json`
         )
       end
     end
 
-    # rubocop:disable Metrics/LineLength
     def clean_up_eslint_output(output)
       # 1. Filter out offences without a warning or error
       # 2. Get the messages for that file

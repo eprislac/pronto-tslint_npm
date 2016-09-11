@@ -51,5 +51,25 @@ module Pronto
         end
       end
     end
+
+    describe '.files_to_lint' do
+      subject(:files_to_lint) { ESLintNpm.files_to_lint }
+
+      it 'matches .js by default' do
+        expect(files_to_lint).to match('my_js.js')
+      end
+
+      it 'matches .es6 by default' do
+        expect(files_to_lint).to match('my_js.es6')
+      end
+    end
+
+    describe '.eslint_executable' do
+      subject(:eslint_executable) { ESLintNpm.eslint_executable }
+
+      it 'is `eslint` by default' do
+        expect(eslint_executable).to eql('eslint')
+      end
+    end
   end
 end
