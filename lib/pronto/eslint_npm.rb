@@ -4,7 +4,7 @@ require 'shellwords'
 module Pronto
   class ESLintNpm < Runner
     CONFIG_FILE = '.pronto_eslint_npm.yml'.freeze
-    CONFIG_KEYS = %i(eslint_executable files_to_lint).freeze
+    CONFIG_KEYS = %w(eslint_executable files_to_lint).freeze
 
     attr_writer :eslint_executable
 

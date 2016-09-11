@@ -39,7 +39,7 @@ module Pronto
 
         context(
           'with files to lint config that never matches',
-          config: { files_to_lint: 'will never match' }
+          config: { 'files_to_lint' => 'will never match' }
         ) do
           it 'returns zero errors' do
             expect(run.count).to eql(0)
@@ -48,7 +48,7 @@ module Pronto
 
         context(
           'with files to lint config that matches only .js',
-          config: { files_to_lint: /\.js/ }
+          config: { 'files_to_lint' => /\.js/ }
         ) do
           it 'returns correct amount of errors' do
             expect(run.count).to eql(2)
@@ -57,7 +57,7 @@ module Pronto
 
         context(
           'with different eslint executable',
-          config: { eslint_executable: './custom_eslint.sh' }
+          config: { 'eslint_executable' => './custom_eslint.sh' }
         ) do
           it 'calls the custom eslint eslint_executable' do
             expect { run }.to raise_error(JSON::ParserError, /custom eslint called/)
