@@ -48,7 +48,7 @@ module Pronto
 
         context(
           'with files to lint config that matches only .js',
-          config: { 'files_to_lint' => /\.js/ }
+          config: { 'files_to_lint' => '\.js$' }
         ) do
           it 'returns correct amount of errors' do
             expect(run.count).to eql(2)
