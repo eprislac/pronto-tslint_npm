@@ -5,16 +5,22 @@ module Pronto
     let(:eslint) { ESLintNpm.new(patches) }
 
     describe '#run' do
-      subject { eslint.run }
+      subject(:run) { eslint.run }
 
       context 'patches are nil' do
         let(:patches) { nil }
-        it { should == [] }
+
+        it 'returns an empty array' do
+          expect(run).to eql([])
+        end
       end
 
       context 'no patches' do
         let(:patches) { [] }
-        it { should == [] }
+
+        it 'returns an empty array' do
+          expect(run).to eql([])
+        end
       end
 
       context 'patches with a one and a four warnings' do
@@ -22,8 +28,13 @@ module Pronto
 
         let(:patches) { repo.diff('master') }
 
-        its(:count) { should == 5 }
-        its(:'first.msg') { should == "'foo' is not defined." }
+        it 'returns correct number of errors' do
+          expect(run.count).to eql(5)
+        end
+
+        it 'has correct first message' do
+          expect(run.first.msg).to eql("'foo' is not defined.")
+        end
       end
 
       context 'repo with ignored and not ignored file, each with three warnings' do
@@ -31,8 +42,13 @@ module Pronto
 
         let(:patches) { repo.diff('master') }
 
-        its(:count) { should == 3 }
-        its(:'first.msg') { should == "'HelloWorld' is defined but never used." }
+        it 'returns correct number of errors' do
+          expect(run.count).to eql(3)
+        end
+
+        it 'has correct first message' do
+          expect(run.first.msg).to eql("'HelloWorld' is defined but never used.")
+        end
       end
     end
   end

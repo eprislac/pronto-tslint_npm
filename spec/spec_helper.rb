@@ -1,3 +1,4 @@
+require 'fileutils'
 require 'rspec'
 require 'rspec/its'
 require 'pronto/eslint_npm'
@@ -11,9 +12,4 @@ require 'pronto/eslint_npm'
     let(:repo) { Pronto::Git::Repository.new("spec/fixtures/#{repo_name}.git") }
     after { FileUtils.mv(dot_git, git) }
   end
-end
-
-RSpec.configure do |config|
-  config.expect_with(:rspec) { |c| c.syntax = :should }
-  config.mock_with(:rspec) { |c| c.syntax = :should }
 end
