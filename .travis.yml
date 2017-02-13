@@ -1,8 +1,9 @@
 sudo: required
 dist: trusty
 language: ruby
-before_script:
+before_install:
 - gem update --system
+before_script:
 - npm install -g eslint
 rvm:
 - 2.0.0
