@@ -2,7 +2,6 @@
 
 $LOAD_PATH.push File.expand_path('../lib', __FILE__)
 require 'pronto/eslint_npm/version'
-require 'rake'
 
 Gem::Specification.new do |s|
   s.name = 'pronto-eslint_npm'
@@ -19,7 +18,7 @@ Gem::Specification.new do |s|
   s.required_ruby_version = '>= 2.0.0'
   s.rubygems_version = '1.8.23'
 
-  s.files = FileList['LICENSE', 'README.md', 'lib/**/*']
+  s.files = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   s.extra_rdoc_files = ['LICENSE', 'README.md']
   s.require_paths = ['lib']
   s.requirements << 'eslint (in PATH)'
