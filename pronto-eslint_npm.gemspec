@@ -9,14 +9,13 @@ Gem::Specification.new do |s|
   s.platform = Gem::Platform::RUBY
   s.authors = ['Markus Doits', 'Mindaugas Mozūras']
   s.email = 'markus.doits@gmail.com'
-  s.homepage = 'http://github.org/doits/pronto-eslint_npm'
+  s.homepage = 'https://github.org/doits/pronto-eslint_npm'
   s.summary = <<-EOF
     Pronto runner for ESLint, pluggable linting utility for JavaScript and JSX
   EOF
 
   s.licenses = ['MIT']
   s.required_ruby_version = '>= 2.0.0'
-  s.rubygems_version = '1.8.23'
 
   s.files = `git ls-files -z`.split("\x0").select { |f| f.match(%r{^(lib/|(LICENSE|README.md)$)}) }
   s.extra_rdoc_files = ['LICENSE', 'README.md']
