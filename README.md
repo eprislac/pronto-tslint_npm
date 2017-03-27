@@ -39,7 +39,7 @@ Following options are available:
 Example configuration to call custom eslint executable and only lint files ending with `.my_custom_extension`:
 
 ```yaml
-# .pronto_eslint_npm.yaml
+# .pronto_eslint_npm.yml
 eslint_executable: '/my/custom/node/path/.bin/eslint'
 files_to_lint: '\.my_custom_extension$'
 ```
