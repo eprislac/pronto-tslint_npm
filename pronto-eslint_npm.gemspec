@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.platform = Gem::Platform::RUBY
   s.authors = ['Markus Doits', 'Mindaugas Mozūras']
   s.email = 'markus.doits@gmail.com'
-  s.homepage = 'https://github.org/doits/pronto-eslint_npm'
+  s.homepage = 'https://github.com/doits/pronto-eslint_npm'
   s.summary = <<-EOF
     Pronto runner for ESLint, pluggable linting utility for JavaScript and JSX
   EOF
