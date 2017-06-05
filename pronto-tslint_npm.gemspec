@@ -5,7 +5,7 @@ require 'pronto/tslint_npm/version'
 
 Gem::Specification.new do |s|
   s.name = 'pronto-tslint_npm'
-  s.version = Pronto::ESLintNpmVersion::VERSION
+  s.version = Pronto::TSLintNpmVersion::VERSION
   s.platform = Gem::Platform::RUBY
   s.authors = ['Eddie Prislac','Markus Doits', 'Mindaugas Mozūras']
   s.email = 'edward.prislac@gmail.com'

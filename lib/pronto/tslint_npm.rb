@@ -2,18 +2,18 @@ require 'pronto'
 require 'shellwords'
 
 module Pronto
-  class ESLintNpm < Runner
-    CONFIG_FILE = '.pronto_eslint_npm.yml'.freeze
-    CONFIG_KEYS = %w(eslint_executable files_to_lint).freeze
+  class TSLintNpm < Runner
+    CONFIG_FILE = '.pronto_tslint_npm.yml'.freeze
+    CONFIG_KEYS = %w(tslint_executable files_to_lint).freeze
 
-    attr_writer :eslint_executable
+    attr_writer :tslint_executable
 
-    def eslint_executable
-      @eslint_executable || 'eslint'.freeze
+    def tslint_executable
+      @tslint_executable || 'tslint'.freeze
     end
 
     def files_to_lint
-      @files_to_lint || /(\.js|\.es6)$/
+      @files_to_lint || /(\.ts)$/
     end
 
     def files_to_lint=(regexp)
@@ -38,7 +38,7 @@ module Pronto
 
       @patches
         .select { |patch| patch.additions > 0 }
-        .select { |patch| js_file?(patch.new_file_full_path) }
+        .select { |patch| ts_file?(patch.new_file_full_path) }
         .map { |patch| inspect(patch) }
         .flatten.compact
     end
@@ -50,8 +50,8 @@ module Pronto
     end
 
     def inspect(patch)
-      offences = run_eslint(patch)
-      clean_up_eslint_output(offences)
+      offences = run_tslint(patch)
+      clean_up_tslint_output(offences)
         .map do |offence|
           patch
             .added_lines
@@ -67,20 +67,20 @@ module Pronto
       Message.new(path, line, level, offence['message'], nil, self.class)
     end
 
-    def js_file?(path)
+    def ts_file?(path)
       files_to_lint =~ path.to_s
     end
 
-    def run_eslint(patch)
+    def run_tslint(patch)
       Dir.chdir(repo_path) do
         escaped_file_path = Shellwords.escape(patch.new_file_full_path.to_s)
         JSON.parse(
-          `#{eslint_executable} #{escaped_file_path} -f json`
+          `#{tslint_executable} #{escaped_file_path} -f json`
         )
       end
     end
 
-    def clean_up_eslint_output(output)
+    def clean_up_tslint_output(output)
       # 1. Filter out offences without a warning or error
       # 2. Get the messages for that file
       # 3. Ignore errors without a line number for now
