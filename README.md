@@ -1,27 +1,28 @@
-# Pronto runner for ESLint (using eslint from npm)
+# Pronto runner for TSLint (using tslint from npm)
+(forked from doits/pronto-eslint_npm)
 
+<!--
 [![Code Climate](https://codeclimate.com/github/doits/pronto-eslint_npm.svg)](https://codeclimate.com/github/doits/pronto-eslint_npm)
 [![Build Status](https://travis-ci.org/doits/pronto-eslint_npm.svg?branch=master)](https://travis-ci.org/doits/pronto-eslint_npm)
 [![Gem Version](https://badge.fury.io/rb/pronto-eslint_npm.svg)](http://badge.fury.io/rb/pronto-eslint_npm)
 [![Dependency Status](https://gemnasium.com/doits/pronto-eslint_npm.svg)](https://gemnasium.com/doits/pronto-eslint_npm)
+-->
 
-Pronto runner for [ESlint](http://eslint.org), pluggable linting utility for JavaScript and JSX. [What is Pronto?](https://github.com/mmozuras/pronto)
+Pronto runner for [TSlint](https://palantir.github.io/tslint/), pluggable linting utility for TypeScript. [What is Pronto?](https://github.com/mmozuras/pronto)
 
-Uses official eslint executable installed by `npm` in contrast to [pronto-eslint][pronto-eslint].
-
-[pronto-eslint]: https://github.com/mmozuras/pronto-eslint
+Uses official tslint executable installed by `npm`.
 
 ## Prerequisites
 
-You'll need to install [eslint by yourself with npm][eslint-install]. If `eslint` is in your `PATH`, everything will simply work, otherwise you have to provide pronto-eslint-npm your custom executable path (see [below](#configuration-of-eslintnpm)).
+You'll need to install [tslint by yourself with npm][tslint-install]. If `tslint` is in your `PATH`, everything will simply work, otherwise you have to provide pronto-tslint-npm your custom executable path (see [below](#configuration-of-tslintnpm)).
 
-[eslint-install]: http://eslint.org/docs/user-guide/getting-started
+[eslint-install]: https://palantir.github.io/tslint/
 
-## Configuration of ESLint
+## Configuration of TSLint
 
-Configuring ESLint via [.eslintrc and consorts][eslintrc] and excludes via [.eslintignore][eslintignore] will work just fine with pronto-eslint-npm.
+Configuring TSLint via [tslint.json][tslint.json] will work just fine with pronto-eslint-npm.
 
-[eslintrc]: http://eslint.org/docs/user-guide/configuring#configuration-file-formats
+[tslint.json]: https://palantir.github.io/tslint/usage/configuration/
 
 [eslintignore]: http://eslint.org/docs/user-guide/configuring#ignoring-files-and-directories
 
