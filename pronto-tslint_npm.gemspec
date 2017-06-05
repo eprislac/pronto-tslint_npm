@@ -1,17 +1,17 @@
 # -*- encoding: utf-8 -*-
 
 $LOAD_PATH.push File.expand_path('../lib', __FILE__)
-require 'pronto/eslint_npm/version'
+require 'pronto/tslint_npm/version'
 
 Gem::Specification.new do |s|
-  s.name = 'pronto-eslint_npm'
+  s.name = 'pronto-tslint_npm'
   s.version = Pronto::ESLintNpmVersion::VERSION
   s.platform = Gem::Platform::RUBY
-  s.authors = ['Markus Doits', 'Mindaugas Mozūras']
-  s.email = 'markus.doits@gmail.com'
-  s.homepage = 'https://github.com/doits/pronto-eslint_npm'
+  s.authors = ['Eddie Prislac','Markus Doits', 'Mindaugas Mozūras']
+  s.email = 'edward.prislac@gmail.com'
+  s.homepage = 'https://github.com/eprislac/pronto-tslint_npm'
   s.summary = <<-EOF
-    Pronto runner for ESLint, pluggable linting utility for JavaScript and JSX
+    Pronto runner for TSLint, pluggable linting utility for JavaScript and JSX
   EOF
 
   s.licenses = ['MIT']
@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
   s.files = `git ls-files -z`.split("\x0").select { |f| f.match(%r{^(lib/|(LICENSE|README.md)$)}) }
   s.extra_rdoc_files = ['LICENSE', 'README.md']
   s.require_paths = ['lib']
-  s.requirements << 'eslint (in PATH)'
+  s.requirements << 'tslint (in PATH)'
 
   s.add_dependency('pronto', '~> 0.9.1')
   s.add_development_dependency('rake', '>= 11.0', '< 13')
