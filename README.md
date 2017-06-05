@@ -28,19 +28,19 @@ Configuring TSLint via [tslint.json][tslint.json] will work just fine with pront
 
 ## Configuration of ESLintNPM
 
-pronto-eslint-npm can be configured by placing a `.pronto_eslint_npm.yml` inside the directory where pronto is run.
+pronto-eslint-npm can be configured by placing a `.pronto_tslint_npm.yml` inside the directory where pronto is run.
 
 Following options are available:
 
 | Option            | Meaning                                                                                  | Default                             |
 | ----------------- | ---------------------------------------------------------------------------------------- | ----------------------------------- |
-| eslint_executable | ESLint executable to call.                                                               | `eslint` (calls `eslint` in `PATH`) |
-| files_to_lint     | What files to lint. Absolute path of offending file will be matched against this Regexp. | `(\.js|\.es6)$`                     |
+| tslint_executable | TSLint executable to call.                                                               | `tslint` (calls `tslint` in `PATH`) |
+| files_to_lint     | What files to lint. Absolute path of offending file will be matched against this Regexp. | `(\.ts)$`                     |
 
 Example configuration to call custom eslint executable and only lint files ending with `.my_custom_extension`:
 
 ```yaml
-# .pronto_eslint_npm.yml
-eslint_executable: '/my/custom/node/path/.bin/eslint'
+# .pronto_tslint_npm.yml
+tslint_executable: '/my/custom/node/path/.bin/tslint'
 files_to_lint: '\.my_custom_extension$'
 ```
