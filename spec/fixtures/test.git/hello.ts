@@ -1,5 +1,4 @@
-function HelloWorld(name)
-{
+function HelloWorld(name: string) {
     if (foo) foo++;
     alert(name);
 }

@@ -33,9 +33,7 @@ module Pronto
 
     def run
       return [] if !@patches || @patches.count.zero?
-
       read_config
-
       @patches
         .select { |patch| patch.additions > 0 }
         .select { |patch| ts_file?(patch.new_file_full_path) }
@@ -43,7 +41,7 @@ module Pronto
         .flatten.compact
     end
 
-    private
+   private
 
     def repo_path
       @_repo_path ||= @patches.first.repo.path

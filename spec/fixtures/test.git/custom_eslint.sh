@@ -1,1 +1,0 @@
-printf 'custom eslint called'
