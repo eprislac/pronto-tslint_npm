@@ -13,7 +13,7 @@ module Pronto
     end
 
     def files_to_lint
-      @files_to_lint || /(\.ts)$/
+      @files_to_lint || /(.*\.ts)$/
     end
 
     def files_to_lint=(regexp)
@@ -41,7 +41,7 @@ module Pronto
         .flatten.compact
     end
 
-   private
+   # private
 
     def repo_path
       @_repo_path ||= @patches.first.repo.path
@@ -53,20 +53,19 @@ module Pronto
         .map do |offence|
           patch
             .added_lines
-            .select { |line| line.new_lineno == offence['line'] }
-            .map { |line| new_message(offence, line) }
+            .select { |line| line.new_lineno == offence[:line] }
+            .map { |line| new_message(offence[:msg], line) }
         end
     end
 
     def new_message(offence, line)
       path = line.patch.delta.new_file[:path]
       level = :warning
-
-      Message.new(path, line, level, offence['message'], nil, self.class)
+      Message.new(path, line, level, offence, nil, self.class)
     end
 
     def ts_file?(path)
-      files_to_lint =~ path.to_s
+      !!(files_to_lint =~ path.to_s)
     end
 
     def run_tslint(patch)
@@ -82,10 +81,14 @@ module Pronto
       # 1. Filter out offences without a warning or error
       # 2. Get the messages for that file
       # 3. Ignore errors without a line number for now
-      output
-        .select { |offence| offence['errorCount'] + offence['warningCount'] > 0 }
-        .map { |offence| offence['messages'] }
-        .flatten.select { |offence| offence['line'] }
+      return [] unless output.count > 0
+      output.map do |offence|
+        {
+          msg: offence['failure'],
+          line: offence['startPosition']['line']
+        }
+      end
+
     end
   end
 end

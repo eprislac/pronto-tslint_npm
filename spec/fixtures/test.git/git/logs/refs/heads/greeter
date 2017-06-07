@@ -1,7 +1,4 @@
-0000000000000000000000000000000000000000 58455c619954bd24b7eca549ccd77d6f0f8051d9 Eddie Prislac <prislac@informz.com> 1496770449 -0500	clone: from git@github.com:eprislac/ts_pronto_linter_test.git
-58455c619954bd24b7eca549ccd77d6f0f8051d9 e31041c6637d52d8e3b3160dcc74cea6b829b1be Eddie Prislac <prislac@informz.com> 1496770803 -0500	commit: Initial commit
-e31041c6637d52d8e3b3160dcc74cea6b829b1be e31041c6637d52d8e3b3160dcc74cea6b829b1be Eddie Prislac <prislac@informz.com> 1496770825 -0500	checkout: moving from master to develop
-e31041c6637d52d8e3b3160dcc74cea6b829b1be e31041c6637d52d8e3b3160dcc74cea6b829b1be Eddie Prislac <prislac@informz.com> 1496770846 -0500	checkout: moving from develop to greeter
+0000000000000000000000000000000000000000 e31041c6637d52d8e3b3160dcc74cea6b829b1be Eddie Prislac <prislac@informz.com> 1496770846 -0500	branch: Created from HEAD
 e31041c6637d52d8e3b3160dcc74cea6b829b1be 9995b3bcfe9cbe3e73d9401e944d55ae5a36fefd Eddie Prislac <prislac@informz.com> 1496771205 -0500	commit: Added Greeter
 9995b3bcfe9cbe3e73d9401e944d55ae5a36fefd 6b07faaee5fa29be038984c89310616b9f57ae83 Eddie Prislac <prislac@informz.com> 1496781720 -0500	commit: Added style errors
 6b07faaee5fa29be038984c89310616b9f57ae83 cc5fa4f435b2ea57b61f94634bbb7cd7417ac5ef Eddie Prislac <prislac@informz.com> 1496782018 -0500	commit: add tslint.json
