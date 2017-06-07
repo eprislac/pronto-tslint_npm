@@ -73,7 +73,7 @@ module Pronto
       Dir.chdir(repo_path) do
         escaped_file_path = Shellwords.escape(patch.new_file_full_path.to_s)
         JSON.parse(
-          `#{tslint_executable} #{escaped_file_path} -f json`
+          `#{tslint_executable} #{escaped_file_path} -t json`
         )
       end
     end
