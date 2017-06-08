@@ -13,6 +13,12 @@ You'll need to install [tslint by yourself with npm][tslint-install]. If `tslint
 
 [eslint-install]: https://palantir.github.io/tslint/
 
+## Installation
+
+```
+gem install pronto-tslint_nppm
+```
+
 ## Configuration of TSLint
 
 Configuring TSLint via [tslint.json][tslint.json] will work just fine with pronto-eslint-npm.
