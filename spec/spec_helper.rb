@@ -2,6 +2,8 @@ require 'fileutils'
 require 'byebug'
 require 'rspec'
 require 'pronto/tslint_npm'
+require 'coveralls'
+Coveralls.wear!
 
 %w(test tslintignore).each do |repo_name|
   RSpec.shared_context "#{repo_name} repo" do
@@ -22,3 +24,4 @@ RSpec.shared_context 'with config', config: true do
   before(:each) { File.write(config_path, requested_config) }
   after(:each) { FileUtils.rm(config_path) }
 end
+
