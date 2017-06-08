@@ -16,7 +16,7 @@ You'll need to install [tslint by yourself with npm][tslint-install]. If `tslint
 ## Installation
 
 ```
-gem install pronto-tslint_nppm
+gem install pronto-tslint_npm
 ```
 
 ## Configuration of TSLint
