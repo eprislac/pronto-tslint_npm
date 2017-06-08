@@ -1,5 +1,5 @@
 # Pronto runner for TSLint (using tslint from npm)
-(forked from doits/pronto-eslint_npm)
+forked from [doits/pronto-eslint_npm](http://github.com/doits/pronto-eslint_npm)
 
 [![Gem Version](https://badge.fury.io/rb/pronto-tslint_npm.svg)](https://badge.fury.io/rb/pronto-tslint_npm)
 ![Build Status](https://travis-ci.org/eprislac/pronto-tslint_npm.svg?branch=master "Build Status")
@@ -17,7 +17,7 @@ Uses official tslint executable installed by `npm`.
 
 You'll need to install [tslint by yourself with npm][tslint-install]. If `tslint` is in your `PATH`, everything will simply work, otherwise you have to provide pronto-tslint-npm your custom executable path (see [below](#configuration-of-tslintnpm)).
 
-[eslint-install]: https://palantir.github.io/tslint/
+[tslint-install]: https://palantir.github.io/tslint/
 
 ## Installation
 
