@@ -3,9 +3,9 @@
 
 ![Build Status](https://travis-ci.org/eprislac/pronto-tslint_npm.svg?branch=master "Build Status")
 [![Code Climate](https://codeclimate.com/github/eprislac/pronto-tslint_npm/badges/gpa.svg)](https://codeclimate.com/github/eprislac/pronto-tslint_npm)
-[![Test Coverage](https://codeclimate.com/github/eprislac/pronto-tslint_npm/badges/coverage.svg)](https://codeclimate.com/github/eprislac/pronto-tslint_npm/coverage)
 [![Issue Count](https://codeclimate.com/github/eprislac/pronto-tslint_npm/badges/issue_count.svg)](https://codeclimate.com/github/eprislac/pronto-tslint_npm)
 [![Dependency Status](https://gemnasium.com/badges/github.com/eprislac/pronto-tslint_npm.svg)](https://gemnasium.com/github.com/eprislac/pronto-tslint_npm)
+[![Coverage Status](https://coveralls.io/repos/github/eprislac/pronto-tslint_npm/badge.svg?branch=master)](https://coveralls.io/github/eprislac/pronto-tslint_npm?branch=master)
 
 Pronto runner for [TSlint](https://palantir.github.io/tslint/), pluggable linting utility for TypeScript. [What is Pronto?](https://github.com/mmozuras/pronto)
 
