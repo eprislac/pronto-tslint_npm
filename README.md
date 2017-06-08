@@ -20,7 +20,15 @@ You'll need to install [tslint by yourself with npm][tslint-install]. If `tslint
 [tslint-install]: https://palantir.github.io/tslint/
 
 ## Installation
-
+First, ensure you have [node](https://nodejs.org/en/) with npm installed, then install tslint using the following command in your terminal:
+```
+npm install -g tslint
+```
+Second, ensure you have pronto installed, if you have not already:
+```
+gem install pronto
+```
+Finally, install this gem, using the following command
 ```
 gem install pronto-tslint_npm
 ```
