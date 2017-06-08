@@ -35,7 +35,7 @@ gem install pronto-tslint_npm
 
 ## Configuration of TSLint
 
-Configuring TSLint via [tslint.json][tslint.json] will work just fine with pronto-eslint-npm.
+Configuring TSLint via [tslint.json][tslint.json] will work just fine with pronto-eslint_npm.
 
 [tslint.json]: https://palantir.github.io/tslint/usage/configuration/
 
