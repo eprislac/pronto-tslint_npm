@@ -7,11 +7,11 @@ Gem::Specification.new do |s|
   s.name = 'pronto-tslint_npm'
   s.version = Pronto::TSLintNpmVersion::VERSION
   s.platform = Gem::Platform::RUBY
-  s.authors = ['Eddie Prislac','Markus Doits', 'Mindaugas Mozūras']
+  s.authors = ['Eddie Prislac', 'Mindaugas Mozūras']
   s.email = 'edward.prislac@gmail.com'
   s.homepage = 'https://github.com/eprislac/pronto-tslint_npm'
   s.summary = <<-EOF
-    Pronto runner for TSLint, pluggable linting utility for JavaScript and JSX
+    Pronto runner for TSLint, pluggable linting utility for TypeScript
   EOF
 
   s.licenses = ['MIT']

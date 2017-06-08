@@ -19,11 +19,11 @@ Configuring TSLint via [tslint.json][tslint.json] will work just fine with pront
 
 [tslint.json]: https://palantir.github.io/tslint/usage/configuration/
 
-[eslintignore]: http://eslint.org/docs/user-guide/configuring#ignoring-files-and-directories
+<!-- [tslintignore]: http://eslint.org/docs/user-guide/configuring#ignoring-files-and-directories -->
 
-## Configuration of ESLintNPM
+## Configuration of TSLintNPM
 
-pronto-eslint-npm can be configured by placing a `.pronto_tslint_npm.yml` inside the directory where pronto is run.
+pronto-tslint-npm can be configured by placing a `.pronto_tslint_npm.yml` inside the directory where pronto is run.
 
 Following options are available:
 
