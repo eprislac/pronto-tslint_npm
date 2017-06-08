@@ -1,11 +1,13 @@
 # Pronto runner for TSLint (using tslint from npm)
 (forked from doits/pronto-eslint_npm)
 
+[![Gem Version](https://badge.fury.io/rb/pronto-tslint_npm.svg)](https://badge.fury.io/rb/pronto-tslint_npm)
 ![Build Status](https://travis-ci.org/eprislac/pronto-tslint_npm.svg?branch=master "Build Status")
 [![Code Climate](https://codeclimate.com/github/eprislac/pronto-tslint_npm/badges/gpa.svg)](https://codeclimate.com/github/eprislac/pronto-tslint_npm)
 [![Issue Count](https://codeclimate.com/github/eprislac/pronto-tslint_npm/badges/issue_count.svg)](https://codeclimate.com/github/eprislac/pronto-tslint_npm)
 [![Dependency Status](https://gemnasium.com/badges/github.com/eprislac/pronto-tslint_npm.svg)](https://gemnasium.com/github.com/eprislac/pronto-tslint_npm)
 [![Coverage Status](https://coveralls.io/repos/github/eprislac/pronto-tslint_npm/badge.svg?branch=master)](https://coveralls.io/github/eprislac/pronto-tslint_npm?branch=master)
+[![Inline docs](http://inch-ci.org/github/eprislac/pronto-tslint_npm.svg?branch=master)](http://inch-ci.org/github/eprislac/pronto-tslint_npm)
 
 Pronto runner for [TSlint](https://palantir.github.io/tslint/), pluggable linting utility for TypeScript. [What is Pronto?](https://github.com/mmozuras/pronto)
 
