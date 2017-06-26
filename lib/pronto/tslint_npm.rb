@@ -85,10 +85,9 @@ module Pronto
       output.map do |offence|
         {
           msg: offence['failure'],
-          line: offence['startPosition']['line']
+          line: offence['startPosition']['line'] + 1
         }
       end
-
     end
   end
 end

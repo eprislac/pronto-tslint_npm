@@ -30,11 +30,15 @@ module Pronto
         let(:patches) { repo.diff('master') }
 
         it 'returns correct number of errors' do
-          expect(run.count).to eql(6)
+          expect(run.count).to eql(7)
         end
 
         it 'has correct first message' do
           expect(run.first.msg).to eql("Forbidden 'var' keyword, use 'let' or 'const' instead")
+        end
+
+        it 'has correct first line number' do
+          expect(run.first.line.new_lineno).to eql(5)
         end
 
         context(
